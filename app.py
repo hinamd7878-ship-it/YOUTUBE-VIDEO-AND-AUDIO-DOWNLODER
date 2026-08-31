@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify, send_file
 from dotenv import load_dotenv
 from pathlib import Path
-
+from flask_cors import CORS
 import yt_dlp
 
 from threading import Semaphore, Thread
