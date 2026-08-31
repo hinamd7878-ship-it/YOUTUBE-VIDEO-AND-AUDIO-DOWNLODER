@@ -11,7 +11,9 @@ import os
 import re
 import time
 import uuid
-FFMPEG_PATH = shutil.which("ffmpeg") or "/usr/bin"
+import shutil
+
+FFMPEG_PATH = shutil.which("ffmpeg")
 from collections import defaultdict, deque
 
 
@@ -600,9 +602,8 @@ def run_download(
                     "no_warnings":
                         True,
 
-                    "format":
-                        "bestaudio/best",
-                    "ffmpeg_location": FFMPEG_PATH,
+                    "format": "best[ext=mp4]/best",
+                    
                     "socket_timeout":
                         60,
 
