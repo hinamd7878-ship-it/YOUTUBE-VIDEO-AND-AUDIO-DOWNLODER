@@ -11,7 +11,7 @@ import os
 import re
 import time
 import uuid
-FFMPEG_PATH = r"C:\Users\GT\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-9.0.1-full_build\bin"
+FFMPEG_PATH = shutil.which("ffmpeg") or "/usr/bin"
 from collections import defaultdict, deque
 
 
