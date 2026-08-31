@@ -1,12 +1,29 @@
-const urlInput = document.getElementById("urlInput");
+// =========================================================
+// BACKEND API
+// =========================================================
 
-const videoBtn = document.getElementById("videoBtn");
+const API_URL =
+    "https://himanshukumar.pythonanywhere.com";
 
-const audioBtn = document.getElementById("audioBtn");
 
-const clearBtn = document.getElementById("clearBtn");
+// =========================================================
+// ELEMENTS
+// =========================================================
 
-const status = document.getElementById("status");
+const urlInput =
+    document.getElementById("urlInput");
+
+const videoBtn =
+    document.getElementById("videoBtn");
+
+const audioBtn =
+    document.getElementById("audioBtn");
+
+const clearBtn =
+    document.getElementById("clearBtn");
+
+const status =
+    document.getElementById("status");
 
 const videoContainer =
     document.getElementById("videoContainer");
@@ -22,17 +39,19 @@ const saveBtn =
 // CREATE PROGRESS UI
 // =========================================================
 
-let progressBox = document.getElementById(
-    "progressBox"
-);
+let progressBox =
+    document.getElementById("progressBox");
 
 if (!progressBox) {
 
-    progressBox = document.createElement("div");
+    progressBox =
+        document.createElement("div");
 
-    progressBox.id = "progressBox";
+    progressBox.id =
+        "progressBox";
 
-    progressBox.className = "progress-box hidden";
+    progressBox.className =
+        "progress-box hidden";
 
     progressBox.innerHTML = `
         <div class="progress-top">
@@ -79,22 +98,34 @@ if (!progressBox) {
 
 
 const progressPercent =
-    document.getElementById("progressPercent");
+    document.getElementById(
+        "progressPercent"
+    );
 
 const progressStatus =
-    document.getElementById("progressStatus");
+    document.getElementById(
+        "progressStatus"
+    );
 
 const progressBar =
-    document.getElementById("progressBar");
+    document.getElementById(
+        "progressBar"
+    );
 
 const progressSize =
-    document.getElementById("progressSize");
+    document.getElementById(
+        "progressSize"
+    );
 
 const progressSpeed =
-    document.getElementById("progressSpeed");
+    document.getElementById(
+        "progressSpeed"
+    );
 
 const progressEta =
-    document.getElementById("progressEta");
+    document.getElementById(
+        "progressEta"
+    );
 
 
 // =========================================================
@@ -107,7 +138,8 @@ clearBtn.addEventListener(
 
         urlInput.value = "";
 
-        clearBtn.style.display = "none";
+        clearBtn.style.display =
+            "none";
 
         status.textContent = "";
 
@@ -326,7 +358,8 @@ async function waitForDownload(
 
             const response =
                 await fetch(
-                    "/api/progress/"
+                    API_URL
+                    + "/api/progress/"
                     + encodeURIComponent(
                         jobId
                     )
@@ -439,7 +472,8 @@ async function getFinalFile(
 
     const response =
         await fetch(
-            "/api/file/"
+            API_URL
+            + "/api/file/"
             + encodeURIComponent(
                 jobId
             )
@@ -671,7 +705,8 @@ async function downloadFile(
 
         const response =
             await fetch(
-                "/api/download",
+                API_URL
+                + "/api/download",
                 {
 
                     method:
